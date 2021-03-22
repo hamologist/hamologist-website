@@ -1,0 +1,7 @@
+.root {
+    flex-shrink: 0;
+}
+
+.title {
+    flex-grow: 1;
+}
