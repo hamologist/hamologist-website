@@ -80,15 +80,10 @@ function Intro() {
             <Grid item xs={12} sm={9}>
               <Typography variant={"h5"}>About me</Typography>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed accumsan luctus ligula, sit amet fermentum sapien tincidunt et.
-                In sit amet justo gravida, venenatis felis nec, eleifend velit.
-                Morbi eu quam mauris.
-                Pellentesque sit amet neque semper, rutrum erat accumsan, congue dolor.
-                Aliquam ut elit at est facilisis lacinia sed in odio.
-                Nullam dictum eleifend placerat.
-                Donec venenatis ipsum eros, quis ullamcorper turpis pharetra at.
-                Aenean fermentum mi quam, non blandit tellus blandit et.
+                Hello, I'm a conjurer of software solutions and you've found my personal pocket dimension.
+                As a code conjurer I've primarily focused on backend solutions, however, I also dabble in the frontend arts from time to time.
+                You can find out more about my professional side from my LinkedIn.
+                If you are interested in seeing what I've personally conjured up, take a look at my projects page.
               </Typography>
             </Grid>
             <Grid item xs={12} sm={3}>

@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
-  menu: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'none'
-    }
-  },
   title: {
     flexGrow: 1,
   },
