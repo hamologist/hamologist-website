@@ -5,6 +5,7 @@ import {
   Toolbar,
   Typography
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -27,13 +28,13 @@ function Header() {
     <AppBar position="static">
       <Toolbar variant={"dense"}>
         <div className={classes.title}>
-          <Button href="#">
+          <Button component={Link} to={"/"}>
             <Typography>
               Home
             </Typography>
           </Button>
         </div>
-        <Button href={"#"}>
+        <Button component={Link} to={"/projects/"}>
           <Typography>
             Projects
           </Typography>
