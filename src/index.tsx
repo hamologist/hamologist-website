@@ -7,7 +7,7 @@ import 'fontsource-roboto'
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter basename={"/new"}>
+  <BrowserRouter basename={"/"}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
