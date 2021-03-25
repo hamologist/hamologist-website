@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 function ListItemLink(props: DefaultComponentProps<any>) {
   return (
-    <ListItem button component="a" disableGutters={true} {...props} >
+    <ListItem button component="a" disableGutters={true} target="_blank" {...props} >
       <ListItemIcon>
         {props.children}
       </ListItemIcon>

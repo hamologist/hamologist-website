@@ -19,13 +19,13 @@ function Footer() {
           <Typography className={styles.title}>
             © 2021 Jordan Paris
           </Typography>
-          <IconButton href={'https://www.linkedin.com/in/derrick-paris-7bb14aa4/'} edge="end" color="inherit" aria-label="menu">
+          <IconButton href={'https://www.linkedin.com/in/derrick-paris-7bb14aa4/'} edge="end" target="_blank" color="inherit" aria-label="menu">
             <LinkedInIcon />
           </IconButton>
-          <IconButton href={'https://github.com/hamologist'} edge="end" color="inherit" aria-label="menu">
+          <IconButton href={'https://github.com/hamologist'} edge="end" target="_blank" color="inherit" aria-label="menu">
             <GitHubIcon />
           </IconButton>
-          <IconButton href={'mailto:hamologist@gmail.com'} edge="end" color="inherit" aria-label="menu">
+          <IconButton href={'mailto:hamologist@gmail.com'} edge="end" target="_blank" color="inherit" aria-label="menu">
             <EmailIcon />
           </IconButton>
         </Toolbar>
