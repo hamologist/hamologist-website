@@ -67,7 +67,7 @@ function Intro() {
     <div className={classes.root}>
       <section className={classes.splash}>
         <Container className={classes.bodyContainer}>
-          <Avatar src="" className={classes.avatar}/>
+          <Avatar src='/logo.jpeg' className={classes.avatar}/>
           <Typography variant="h2">Jordan Paris</Typography>
           <Typography variant="h5">Code is like magic</Typography>
           <Typography variant="h5">I want to be a wizard</Typography>
