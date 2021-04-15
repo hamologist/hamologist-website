@@ -5,7 +5,7 @@ import {
   Toolbar,
   Typography
 } from "@material-ui/core";
-import styles from './Footer.module.css'
+import styles from './footer.module.css'
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";

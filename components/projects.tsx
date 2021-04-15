@@ -8,10 +8,10 @@ import {
   Typography
 } from "@material-ui/core";
 import { useTheme } from '@material-ui/core/styles';
-import EmojifyDialog from "./Dialog/EmojifyDialog";
-import MandelbrotDialog from "./Dialog/MandelbrotDialog";
-import Chip8Dialog from "./Dialog/Chip8Dialog";
-import DiceRollDialog from "./Dialog/DiceRollDialog";
+import EmojifyDialog from "./dialog/emojifyDialog";
+import MandelbrotDialog from "./dialog/mandelbrotDialog";
+import Chip8Dialog from "./dialog/chip8Dialog";
+import DiceRollDialog from "./dialog/diceRollDialog";
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -4,9 +4,10 @@ import {
   CssBaseline, makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
-import Header from "../Nav/Header";
-import Footer from "../Nav/Footer";
+import Header from "./nav/header";
+import Footer from "./nav/footer";
 import { DefaultComponentProps } from "@material-ui/core/OverridableComponent";
+import Head from "next/head";
 
 const useStyles = makeStyles(theme => ({
   app: {
@@ -41,6 +42,10 @@ function BasePage(props: DefaultComponentProps<any>) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Head>
+        <title>Hamologist</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <div className={styles.app}>
         {props.children}

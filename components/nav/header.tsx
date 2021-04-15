@@ -1,11 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   AppBar, Button,
   makeStyles,
   Toolbar,
   Typography
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -23,17 +23,21 @@ function Header() {
     <AppBar position="static">
       <Toolbar variant={"dense"}>
         <div className={classes.title}>
-          <Button component={Link} to={"/"}>
+          <Link href={"/"} passHref>
+            <Button>
+              <Typography>
+                Home
+              </Typography>
+            </Button>
+          </Link>
+        </div>
+        <Link href={"/projects/"} passHref>
+          <Button>
             <Typography>
-              Home
+              Projects
             </Typography>
           </Button>
-        </div>
-        <Button component={Link} to={"/projects/"}>
-          <Typography>
-            Projects
-          </Typography>
-        </Button>
+        </Link>
       </Toolbar>
     </AppBar>
   );
