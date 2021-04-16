@@ -31,7 +31,7 @@ function Header() {
             </Button>
           </Link>
         </div>
-        <Link href={"/projects/"} passHref>
+        <Link href={"/projects"} passHref>
           <Button>
             <Typography>
               Projects
