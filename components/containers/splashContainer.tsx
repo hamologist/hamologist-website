@@ -6,7 +6,10 @@ import styles from './splashContainer.module.css';
 export interface SplashProps {
   header: string,
   subHeader?: string[],
-  avatar?: string,
+  avatar?: {
+    src: string,
+    alt?: string,
+  },
 }
 
 export const LightSplash = styled(Container)(({ theme }) => ({
@@ -18,7 +21,7 @@ export function SplashContainer({ header, subHeader, avatar }: SplashProps) {
   let subHeaderComponent = null;
 
   if (avatar !== undefined) {
-    avatarComponent = <Avatar src={avatar} className={styles.avatar} />;
+    avatarComponent = <Avatar src={avatar.src} alt={avatar.alt ?? ''} className={styles.avatar} />;
   }
 
   if (subHeader !== undefined) {

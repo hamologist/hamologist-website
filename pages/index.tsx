@@ -12,7 +12,10 @@ import MainSection from '../components/sections/mainSection';
 
 export default function Home() {
   return (
-    <BasePage>
+    <BasePage
+      title="Hamologist"
+      description="Personal page for Jordan Paris, aka: Hamologist"
+    >
       <div className="fillPage">
         <SplashContainer
           header="Jordan Paris"
@@ -20,7 +23,10 @@ export default function Home() {
             'Code is like magic',
             'I want to be a wizard',
           ]}
-          avatar="/logo.jpeg"
+          avatar={{
+            src: '/logo.jpeg',
+            alt: 'Jordan Paris',
+          }}
         />
         <Divider />
         <Container className="fullWidth">

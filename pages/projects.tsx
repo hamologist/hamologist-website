@@ -12,7 +12,10 @@ import styles from '../styles/projects.module.css';
 
 export default function Projects() {
   return (
-    <BasePage>
+    <BasePage
+      title="Hamologist - Projects"
+      description="Projects page for Jordan Paris, aka: Hamologist"
+    >
       <div className="fillPage">
         <SplashContainer
           header="Projects"

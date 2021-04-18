@@ -14,7 +14,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function BasePage({ children }: React.PropsWithChildren<{}>) {
+function BasePage(
+  {
+    children,
+    title,
+    description,
+  }: React.PropsWithChildren<{title: string, description: string}>,
+) {
   const theme = React.useMemo(
     () => createMuiTheme({
       palette: {
@@ -41,7 +47,11 @@ function BasePage({ children }: React.PropsWithChildren<{}>) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Head>
-        <title>Hamologist</title>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content={description}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

@@ -4,7 +4,10 @@ import BasePage from '../components/basePage';
 
 export default function Custom404() {
   return (
-    <BasePage>
+    <BasePage
+      title="Hamologist - 404"
+      description="404 page, invalid route"
+    >
       <Container className="centerText">
         <Typography variant="h1">404</Typography>
         <Typography variant="h3">Page Fizzled</Typography>
