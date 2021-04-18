@@ -1,20 +1,13 @@
-import BasePage from "../components/basePage";
-import { Container, makeStyles, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles(() => ({
-  errorContainer: {
-    textAlign: 'center',
-  },
-}))
+import React from 'react';
+import { Container, Typography } from '@material-ui/core';
+import BasePage from '../components/basePage';
 
 export default function Custom404() {
-  const classes = useStyles();
-
   return (
     <BasePage>
-      <Container className={classes.errorContainer}>
-        <Typography variant={"h1"}>404</Typography>
-        <Typography variant={"h3"}>Page Fizzled</Typography>
+      <Container className="centerText">
+        <Typography variant="h1">404</Typography>
+        <Typography variant="h3">Page Fizzled</Typography>
       </Container>
     </BasePage>
   );

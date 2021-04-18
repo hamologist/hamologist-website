@@ -23,3 +23,16 @@ code {
   flex-direction: column;
   height: 100%;
 }
+
+.centerText {
+  text-align: center;
+}
+
+.fillPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  width: 100%;
+}

@@ -2,28 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import {
   AppBar, Button,
-  makeStyles,
   Toolbar,
-  Typography
-} from "@material-ui/core";
+  Typography,
+} from '@material-ui/core';
+import styles from './header.module.css';
 
-const useStyles = makeStyles((theme) => ({
-  list: {
-    width: 250,
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
-function Header() {
-  const classes = useStyles();
-
+export default function Header() {
   return (
     <AppBar position="static">
-      <Toolbar variant={"dense"}>
-        <div className={classes.title}>
-          <Link href={"/"} passHref>
+      <Toolbar variant="dense">
+        <div className={styles.title}>
+          <Link href="/" passHref>
             <Button>
               <Typography>
                 Home
@@ -31,7 +20,7 @@ function Header() {
             </Button>
           </Link>
         </div>
-        <Link href={"/projects"} passHref>
+        <Link href="/projects" passHref>
           <Button>
             <Typography>
               Projects
@@ -42,5 +31,3 @@ function Header() {
     </AppBar>
   );
 }
-
-export default Header;

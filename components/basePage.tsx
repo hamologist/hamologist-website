@@ -3,38 +3,36 @@ import {
   createMuiTheme,
   CssBaseline, makeStyles,
   ThemeProvider,
-} from "@material-ui/core";
-import Header from "./nav/header";
-import Footer from "./nav/footer";
-import { DefaultComponentProps } from "@material-ui/core/OverridableComponent";
-import Head from "next/head";
+} from '@material-ui/core';
+import Head from 'next/head';
+import Header from './nav/header';
+import Footer from './nav/footer';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   app: {
     flex: '1 0 auto',
   },
 }));
 
-function BasePage(props: DefaultComponentProps<any>) {
+function BasePage({ children }: React.PropsWithChildren<{}>) {
   const theme = React.useMemo(
-    () =>
-      createMuiTheme({
-        palette: {
-          primary: {
-            light: '#718792',
-            main: '#455a64',
-            dark: '#1c313a',
-            contrastText: '#ffffff',
-          },
-          secondary: {
-            light: '#4f5b62',
-            main: '#263238',
-            dark: '#000a12',
-            contrastText: '#ffffff',
-          },
-          type: 'dark',
+    () => createMuiTheme({
+      palette: {
+        primary: {
+          light: '#718792',
+          main: '#455a64',
+          dark: '#1c313a',
+          contrastText: '#ffffff',
         },
-      }),
+        secondary: {
+          light: '#4f5b62',
+          main: '#263238',
+          dark: '#000a12',
+          contrastText: '#ffffff',
+        },
+        type: 'dark',
+      },
+    }),
     [],
   );
   const styles = useStyles();
@@ -48,7 +46,7 @@ function BasePage(props: DefaultComponentProps<any>) {
       </Head>
       <Header />
       <div className={styles.app}>
-        {props.children}
+        {children}
       </div>
       <Footer />
     </ThemeProvider>

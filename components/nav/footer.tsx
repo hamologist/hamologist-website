@@ -3,35 +3,46 @@ import {
   AppBar,
   IconButton,
   Toolbar,
-  Typography
-} from "@material-ui/core";
-import styles from './footer.module.css'
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import EmailIcon from "@material-ui/icons/Email";
+  Typography,
+} from '@material-ui/core';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import EmailIcon from '@material-ui/icons/Email';
+import styles from './footer.module.css';
 
+function LocalIconButton({ href, children }: React.PropsWithChildren<{href: string}>) {
+  return (
+    <IconButton
+      href={href}
+      edge="end"
+      target="_blank"
+      color="inherit"
+      aria-label="menu"
+    >
+      {children}
+    </IconButton>
+  );
+}
 
-function Footer() {
+export default function Footer() {
   return (
     <div className={styles.root}>
       <AppBar position="static">
-        <Toolbar variant={"dense"}>
+        <Toolbar variant="dense">
           <Typography className={styles.title}>
             © 2021 Jordan Paris
           </Typography>
-          <IconButton href={'https://www.linkedin.com/in/derrick-paris-7bb14aa4/'} edge="end" target="_blank" color="inherit" aria-label="menu">
+          <LocalIconButton href="https://www.linkedin.com/in/derrick-paris-7bb14aa4/">
             <LinkedInIcon />
-          </IconButton>
-          <IconButton href={'https://github.com/hamologist'} edge="end" target="_blank" color="inherit" aria-label="menu">
+          </LocalIconButton>
+          <LocalIconButton href="https://github.com/hamologist">
             <GitHubIcon />
-          </IconButton>
-          <IconButton href={'mailto:hamologist@gmail.com'} edge="end" target="_blank" color="inherit" aria-label="menu">
+          </LocalIconButton>
+          <LocalIconButton href="mailto:hamologist@gmail.com">
             <EmailIcon />
-          </IconButton>
+          </LocalIconButton>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
-
-export default Footer;
