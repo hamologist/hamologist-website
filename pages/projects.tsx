@@ -33,15 +33,17 @@ export default function Projects() {
                 headerHref="https://www.hamologist.com/emojify/"
                 openInNewTab
                 dek="Liven up a message with a randomized assortment of emojis."
+                isNextLink={false}
               >
                 <EmojifyDialog />
               </IntroContainer>
               <Divider className={styles.projectDivider} />
               <IntroContainer
                 header="Mandelbrot"
-                headerHref="https://www.hamologist.com/mandelbrot/"
+                headerHref="/mandelbrot"
                 openInNewTab
                 dek="Peer into the mandelbrot set and visualize the power of fractals."
+                isNextLink
               >
                 <MandelbrotDialog />
               </IntroContainer>
@@ -51,6 +53,7 @@ export default function Projects() {
                 headerHref="https://www.hamologist.com/chip-eight/"
                 openInNewTab
                 dek="Interpret the ancient text and run CHIP-8 applications."
+                isNextLink={false}
               >
                 <Chip8Dialog />
               </IntroContainer>
@@ -60,6 +63,7 @@ export default function Projects() {
                 headerHref="https://github.com/hamologist/dice-roll"
                 openInNewTab
                 dek="It's time to let luck decide! Grab your D20 and hope for the best!"
+                isNextLink={false}
               >
                 <DiceRollDialog />
               </IntroContainer>
@@ -69,6 +73,7 @@ export default function Projects() {
                 headerHref="https://www.hamologist.com"
                 dek="Yup, the site you are on right now. What? This still counts..."
                 openInNewTab={false}
+                isNextLink={false}
               />
             </List>
           </MainSection>

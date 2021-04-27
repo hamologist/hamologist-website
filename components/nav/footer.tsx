@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  AppBar,
   IconButton,
   Toolbar,
   Typography,
@@ -9,6 +8,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Email';
 import styles from './footer.module.css';
+import FixedAppBar from './fixedAppBar';
 
 function LocalIconButton({ href, children }: React.PropsWithChildren<{href: string}>) {
   return (
@@ -26,23 +26,21 @@ function LocalIconButton({ href, children }: React.PropsWithChildren<{href: stri
 
 export default function Footer() {
   return (
-    <div className={styles.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <Typography className={styles.title}>
-            © 2021 Jordan Paris
-          </Typography>
-          <LocalIconButton href="https://www.linkedin.com/in/derrick-paris-7bb14aa4/">
-            <LinkedInIcon />
-          </LocalIconButton>
-          <LocalIconButton href="https://github.com/hamologist">
-            <GitHubIcon />
-          </LocalIconButton>
-          <LocalIconButton href="mailto:hamologist@gmail.com">
-            <EmailIcon />
-          </LocalIconButton>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <FixedAppBar position="static">
+      <Toolbar variant="dense">
+        <Typography className={styles.title}>
+          © 2021 Jordan Paris
+        </Typography>
+        <LocalIconButton href="https://www.linkedin.com/in/derrick-paris-7bb14aa4/">
+          <LinkedInIcon />
+        </LocalIconButton>
+        <LocalIconButton href="https://github.com/hamologist">
+          <GitHubIcon />
+        </LocalIconButton>
+        <LocalIconButton href="mailto:hamologist@gmail.com">
+          <EmailIcon />
+        </LocalIconButton>
+      </Toolbar>
+    </FixedAppBar>
   );
 }

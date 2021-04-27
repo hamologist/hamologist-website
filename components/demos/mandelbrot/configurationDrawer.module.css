@@ -1,0 +1,16 @@
+.root {
+    flex-grow: 1;
+}
+
+.drawer {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.drawerPaper {
+    width: 240px;
+}
+
+.drawerContainer {
+    overflow: auto;
+}

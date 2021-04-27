@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Typography } from '@material-ui/core';
 import DialogLink from '../dialogLink';
 import { ReadMoreDialog } from '../readMoreDialog';
@@ -17,12 +18,11 @@ export default function MandelbrotDialog() {
       <ul>
         <li>
           <Typography>
-            <DialogLink
-              href="https://www.hamologist.com/mandelbrot/"
-              target="_blank"
-            >
-              HTML Explorer
-            </DialogLink>
+            <Link href="/mandelbrot" passHref>
+              <DialogLink>
+                HTML Explorer
+              </DialogLink>
+            </Link>
           </Typography>
           <ul>
             <li>
@@ -37,18 +37,17 @@ export default function MandelbrotDialog() {
               </Typography>
               <ul>
                 <li>
-                  <Typography>x Value: -0.7746806106269039</Typography>
+                  <Typography>x Value: -0.765</Typography>
                 </li>
                 <li>
-                  <Typography>Y Value: -0.1374168856037867</Typography>
+                  <Typography>Y Value: 0.1</Typography>
                 </li>
                 <li>
-                  <Typography>Zoom: 160000000.0</Typography>
+                  <Typography>Zoom: 240</Typography>
                 </li>
                 <li>
                   <Typography>
-                    Max Iterations: 8000 (if you&apos;d like a better color gradient for the set
-                    snapshot)
+                    Max Iterations: 300
                   </Typography>
                 </li>
               </ul>

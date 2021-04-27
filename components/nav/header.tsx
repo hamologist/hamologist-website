@@ -1,15 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  AppBar, Button,
+  Button,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import styles from './header.module.css';
+import FixedAppBar from './fixedAppBar';
 
 export default function Header() {
   return (
-    <AppBar position="static">
+    <FixedAppBar position="static">
       <Toolbar variant="dense">
         <div className={styles.title}>
           <Link href="/" passHref>
@@ -28,6 +29,6 @@ export default function Header() {
           </Button>
         </Link>
       </Toolbar>
-    </AppBar>
+    </FixedAppBar>
   );
 }

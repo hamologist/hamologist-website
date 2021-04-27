@@ -21,6 +21,7 @@ module.exports = {
   ],
   rules: {
     'no-use-before-define': 'off',
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-filename-extension': [
       2,
