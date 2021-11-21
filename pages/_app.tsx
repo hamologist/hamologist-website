@@ -7,7 +7,7 @@ import theme from '../components/theme';
 import '../styles/globals.css';
 import 'fontsource-roboto';
 
-export default function MyApp(props) {
+const MyApp = function MyApp(props) {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -34,10 +34,12 @@ export default function MyApp(props) {
       </StylesProvider>
     </>
   );
-}
+};
 
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pageProps: PropTypes.object.isRequired,
 };
+
+export default MyApp;

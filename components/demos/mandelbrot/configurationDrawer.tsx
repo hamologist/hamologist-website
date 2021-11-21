@@ -19,9 +19,9 @@ import { MandelbrotWorkOrder } from './config';
 export type ConfigurationDrawerProps = React.PropsWithChildren<{
   setWorkOrder: Dispatch<React.SetStateAction<MandelbrotWorkOrder>>,
   workOrder: MandelbrotWorkOrder,
-}>
+}>;
 
-export default function ConfigurationDrawer(
+const ConfigurationDrawer = function ConfigurationDrawer(
   {
     setWorkOrder,
     workOrder,
@@ -41,11 +41,13 @@ export default function ConfigurationDrawer(
     escapePoint: workOrder.escapePoint,
   });
 
-  const handleChange = (event: ChangeEvent<
-      HTMLInputElement |
-      HTMLTextAreaElement |
-      {name: string, value: number}
-    >) => {
+  const handleChange = (
+    event: ChangeEvent<
+    HTMLInputElement |
+    HTMLTextAreaElement |
+    { name: string, value: number }
+    >,
+  ) => {
     setForm((prevState) => ({
       ...prevState,
       [event.target.name]: Number(event.target.value),
@@ -141,4 +143,6 @@ export default function ConfigurationDrawer(
       <Toolbar variant="dense" />
     </Drawer>
   );
-}
+};
+
+export default ConfigurationDrawer;

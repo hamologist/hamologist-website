@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  createMuiTheme,
+  createTheme,
   CssBaseline, makeStyles,
   ThemeProvider,
 } from '@material-ui/core';
@@ -14,15 +14,15 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function BasePage(
+const BasePage = function BasePage(
   {
     children,
     title,
     description,
-  }: React.PropsWithChildren<{title: string, description: string}>,
+  }: React.PropsWithChildren<{ title: string, description: string }>,
 ) {
   const theme = React.useMemo(
-    () => createMuiTheme({
+    () => createTheme({
       palette: {
         primary: {
           light: '#718792',
@@ -61,6 +61,6 @@ function BasePage(
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
 export default BasePage;

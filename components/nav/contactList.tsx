@@ -8,7 +8,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import ListItemLink from './listItemLink';
 
-export default function ContactList() {
+const ContactList = function ContactList() {
   return (
     <List>
       <ListItemLink href="https://www.linkedin.com/in/derrick-paris-7bb14aa4/">
@@ -25,4 +25,6 @@ export default function ContactList() {
       </ListItemLink>
     </List>
   );
-}
+};
+
+export default ContactList;

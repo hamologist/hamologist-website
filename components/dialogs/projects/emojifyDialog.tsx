@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core';
 import DialogLink from '../dialogLink';
 import { ReadMoreDialog } from '../readMoreDialog';
 
-export default function EmojifyDialog() {
+const EmojifyDialog = function EmojifyDialog() {
   return (
     <ReadMoreDialog title="Emojify">
       <Typography>
@@ -94,4 +94,6 @@ export default function EmojifyDialog() {
       </ul>
     </ReadMoreDialog>
   );
-}
+};
+
+export default EmojifyDialog;

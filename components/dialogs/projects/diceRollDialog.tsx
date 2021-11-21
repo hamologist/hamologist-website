@@ -3,7 +3,7 @@ import React from 'react';
 import DialogLink from '../dialogLink';
 import { ReadMoreDialog } from '../readMoreDialog';
 
-export default function DiceRollDialog() {
+const DiceRollDialog = function DiceRollDialog() {
   return (
     <ReadMoreDialog title="Dice Roll">
       <Typography>
@@ -59,4 +59,6 @@ export default function DiceRollDialog() {
       </ul>
     </ReadMoreDialog>
   );
-}
+};
+
+export default DiceRollDialog;

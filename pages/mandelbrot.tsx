@@ -2,7 +2,7 @@ import React from 'react';
 import BasePage from '../components/basePage';
 import App from '../components/demos/mandelbrot/app';
 
-function Mandelbrot() {
+const Mandelbrot = function Mandelbrot() {
   return (
     <BasePage
       title="Hamologist - Mandelbrot"
@@ -11,6 +11,6 @@ function Mandelbrot() {
       <App />
     </BasePage>
   );
-}
+};
 
 export default Mandelbrot;

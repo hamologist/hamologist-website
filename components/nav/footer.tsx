@@ -10,7 +10,9 @@ import EmailIcon from '@material-ui/icons/Email';
 import styles from './footer.module.css';
 import FixedAppBar from './fixedAppBar';
 
-function LocalIconButton({ href, children }: React.PropsWithChildren<{href: string}>) {
+const LocalIconButton = function LocalIconButton(
+  { href, children }: React.PropsWithChildren<{ href: string }>,
+) {
   return (
     <IconButton
       href={href}
@@ -22,9 +24,9 @@ function LocalIconButton({ href, children }: React.PropsWithChildren<{href: stri
       {children}
     </IconButton>
   );
-}
+};
 
-export default function Footer() {
+const Footer = function Footer() {
   return (
     <FixedAppBar position="static">
       <Toolbar variant="dense">
@@ -43,4 +45,6 @@ export default function Footer() {
       </Toolbar>
     </FixedAppBar>
   );
-}
+};
+
+export default Footer;

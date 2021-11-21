@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography } from '@material-ui/core';
 import BasePage from '../components/basePage';
 
-export default function Custom404() {
+const Custom404 = function Custom404() {
   return (
     <BasePage
       title="Hamologist - 404"
@@ -14,4 +14,6 @@ export default function Custom404() {
       </Container>
     </BasePage>
   );
-}
+};
+
+export default Custom404;

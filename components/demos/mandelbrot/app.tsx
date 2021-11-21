@@ -5,9 +5,11 @@ import { defaultWorkOrder, MandelbrotWorkOrder } from './config';
 
 export type MandelbrotProps = React.PropsWithChildren<{
   workOrderProp?: MandelbrotWorkOrder
-}>
+}>;
 
-function Mandelbrot({ workOrderProp = defaultWorkOrder }: MandelbrotProps) {
+const Mandelbrot = function Mandelbrot(
+  { workOrderProp = defaultWorkOrder }: MandelbrotProps,
+) {
   const [workOrder, setWorkOrder] = useState<MandelbrotWorkOrder>(workOrderProp);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -45,6 +47,6 @@ function Mandelbrot({ workOrderProp = defaultWorkOrder }: MandelbrotProps) {
       </div>
     </div>
   );
-}
+};
 
 export default Mandelbrot;
