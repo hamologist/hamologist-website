@@ -21,7 +21,7 @@ export type ConfigurationDrawerProps = React.PropsWithChildren<{
   workOrder: MandelbrotWorkOrder,
 }>;
 
-const ConfigurationDrawer = function ConfigurationDrawer(
+export default function ConfigurationDrawer(
   {
     setWorkOrder,
     workOrder,
@@ -143,6 +143,4 @@ const ConfigurationDrawer = function ConfigurationDrawer(
       <Toolbar variant="dense" />
     </Drawer>
   );
-};
-
-export default ConfigurationDrawer;
+}

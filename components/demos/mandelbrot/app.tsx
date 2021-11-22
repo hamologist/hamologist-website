@@ -7,7 +7,7 @@ export type MandelbrotProps = React.PropsWithChildren<{
   workOrderProp?: MandelbrotWorkOrder
 }>;
 
-const Mandelbrot = function Mandelbrot(
+export default function Mandelbrot(
   { workOrderProp = defaultWorkOrder }: MandelbrotProps,
 ) {
   const [workOrder, setWorkOrder] = useState<MandelbrotWorkOrder>(workOrderProp);
@@ -47,6 +47,4 @@ const Mandelbrot = function Mandelbrot(
       </div>
     </div>
   );
-};
-
-export default Mandelbrot;
+}

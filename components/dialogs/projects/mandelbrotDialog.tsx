@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 import DialogLink from '../dialogLink';
 import { ReadMoreDialog } from '../readMoreDialog';
 
-const MandelbrotDialog = function MandelbrotDialog() {
+export default function MandelbrotDialog() {
   return (
     <ReadMoreDialog title="Mandelbrot">
       <Typography>
@@ -70,6 +70,4 @@ const MandelbrotDialog = function MandelbrotDialog() {
       </ul>
     </ReadMoreDialog>
   );
-};
-
-export default MandelbrotDialog;
+}

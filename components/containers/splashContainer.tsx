@@ -16,7 +16,7 @@ export const LightSplash = styled(Container)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.light,
 }));
 
-export const SplashContainer = function SplashContainer(
+export function SplashContainer(
   { header, subHeader, avatar }: SplashProps,
 ) {
   let avatarComponent = null;
@@ -39,4 +39,4 @@ export const SplashContainer = function SplashContainer(
       {subHeaderComponent}
     </LightSplash>
   );
-};
+}

@@ -10,7 +10,7 @@ import Chip8Dialog from '../components/dialogs/projects/chip8Dialog';
 import DiceRollDialog from '../components/dialogs/projects/diceRollDialog';
 import styles from '../styles/projects.module.css';
 
-const Projects = function Projects() {
+export default function Projects() {
   return (
     <BasePage
       title="Hamologist - Projects"
@@ -81,6 +81,4 @@ const Projects = function Projects() {
       </div>
     </BasePage>
   );
-};
-
-export default Projects;
+}

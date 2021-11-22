@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const BasePage = function BasePage(
+export default function BasePage(
   {
     children,
     title,
@@ -61,6 +61,4 @@ const BasePage = function BasePage(
       <Footer />
     </ThemeProvider>
   );
-};
-
-export default BasePage;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListItem, ListItemIcon } from '@material-ui/core';
 
-const ListItemLink = function ListItemLink(
+export default function ListItemLink(
   {
     href,
     children,
@@ -14,6 +14,4 @@ const ListItemLink = function ListItemLink(
       </ListItemIcon>
     </ListItem>
   );
-};
-
-export default ListItemLink;
+}

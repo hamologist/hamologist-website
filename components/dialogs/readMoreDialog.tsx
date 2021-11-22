@@ -12,7 +12,7 @@ export interface ReadMoreDialogProps {
   title: string,
 }
 
-export const ReadMoreDialog = function ReadMoreDialog(
+export function ReadMoreDialog(
   {
     title,
     children,
@@ -44,4 +44,4 @@ export const ReadMoreDialog = function ReadMoreDialog(
       </Dialog>
     </div>
   );
-};
+}

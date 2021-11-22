@@ -11,7 +11,7 @@ export type ReadMoreContainerProps = React.PropsWithChildren<{
   isNextLink: boolean,
 }>;
 
-export const IntroContainer = function IntroContainer(
+export function IntroContainer(
   {
     header,
     headerHref,
@@ -48,4 +48,4 @@ export const IntroContainer = function IntroContainer(
       {children}
     </Container>
   );
-};
+}

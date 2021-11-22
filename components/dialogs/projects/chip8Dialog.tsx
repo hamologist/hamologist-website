@@ -3,7 +3,7 @@ import React from 'react';
 import DialogLink from '../dialogLink';
 import { ReadMoreDialog } from '../readMoreDialog';
 
-const Chip8Dialog = function Chip8Dialog() {
+export default function Chip8Dialog() {
   return (
     <ReadMoreDialog title="CHIP-8 Interpreter">
       <Typography>
@@ -58,6 +58,4 @@ const Chip8Dialog = function Chip8Dialog() {
       </ul>
     </ReadMoreDialog>
   );
-};
-
-export default Chip8Dialog;
+}

@@ -8,7 +8,7 @@ import {
 import styles from './header.module.css';
 import FixedAppBar from './fixedAppBar';
 
-const Header = function Header() {
+export default function Header() {
   return (
     <FixedAppBar position="static">
       <Toolbar variant="dense">
@@ -31,6 +31,4 @@ const Header = function Header() {
       </Toolbar>
     </FixedAppBar>
   );
-};
-
-export default Header;
+}

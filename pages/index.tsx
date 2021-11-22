@@ -10,7 +10,7 @@ import { SplashContainer } from '../components/containers/splashContainer';
 import ContactList from '../components/nav/contactList';
 import MainSection from '../components/sections/mainSection';
 
-const Home = function Home() {
+export default function Home() {
   return (
     <BasePage
       title="Hamologist"
@@ -54,6 +54,4 @@ const Home = function Home() {
       </div>
     </BasePage>
   );
-};
-
-export default Home;
+}
