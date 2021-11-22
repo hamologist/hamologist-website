@@ -1,0 +1,17 @@
+.cross {
+    background: white;
+    height: 66%;
+    position: relative;
+    width: 10px;
+    transform: rotate(45deg);
+}
+
+.cross::after {
+     background: white;
+     content: '';
+     height: 10px;
+     left: -38px;
+     position: absolute;
+     top: 40px;
+     width: 85px;
+ }
