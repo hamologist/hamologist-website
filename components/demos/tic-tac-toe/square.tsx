@@ -1,9 +1,9 @@
-import React, { Dispatch, useState } from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 import { Grid } from '@material-ui/core';
 import styles from './square.module.css';
 import Circle from './circle';
 import Cross from './cross';
-import { Players } from './app';
+import { GameStates, Players } from './app';
 
 export enum SquareStates {
   Empty,
@@ -15,6 +15,7 @@ export type SquareProps = React.PropsWithChildren<{
   setState: Dispatch<React.SetStateAction<SquareStates>>,
   state: SquareStates,
   player: Players,
+  gameState: GameStates
 }>;
 
 export function Square(
@@ -22,6 +23,7 @@ export function Square(
     setState,
     state,
     player,
+    gameState,
   }: SquareProps,
 ) {
   const handleClick = () => {
@@ -46,6 +48,8 @@ export function Square(
     gamePiece = Cross();
   } else if (state === SquareStates.Circle) {
     gamePiece = Circle();
+  } else if (gameState !== GameStates.Playing) {
+    gamePiece = <div style={{ width: '100%', height: '100%' }} />;
   }
 
   return (
@@ -55,12 +59,14 @@ export function Square(
   );
 }
 
-export default function createSquare(player: Players): [
+export default function createSquare(player: Players, gameState: GameStates): [
   Dispatch<React.SetStateAction<SquareStates>>,
   SquareStates,
   JSX.Element,
 ] {
   const [state, setState] = useState<SquareStates>(SquareStates.Empty);
 
-  return [setState, state, Square({ setState, state, player })];
+  return [setState, state, Square({
+    setState, state, player, gameState,
+  })];
 }
