@@ -41,7 +41,7 @@ export default function Projects() {
               <IntroContainer
                 header="Mandelbrot"
                 headerHref="/mandelbrot"
-                openInNewTab
+                openInNewTab={false}
                 dek="Peer into the mandelbrot set and visualize the power of fractals."
                 isNextLink
               >
@@ -71,9 +71,9 @@ export default function Projects() {
               <IntroContainer
                 header="Tic Tac Toe"
                 headerHref="/tic-tac-toe"
-                openInNewTab
+                openInNewTab={false}
                 dek="Find a friend and play a quick game."
-                isNextLink={false}
+                isNextLink
               />
               <Divider className={styles.projectDivider} />
               <IntroContainer
