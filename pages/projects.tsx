@@ -30,7 +30,7 @@ export default function Projects() {
             <List>
               <IntroContainer
                 header="Emojify"
-                headerHref="https://www.hamologist.com/emojify/"
+                headerHref="/emojify"
                 openInNewTab
                 dek="Liven up a message with a randomized assortment of emojis."
                 isNextLink={false}
@@ -50,7 +50,7 @@ export default function Projects() {
               <Divider className={styles.projectDivider} />
               <IntroContainer
                 header="CHIP-8 Interpreter"
-                headerHref="https://www.hamologist.com/chip-eight/"
+                headerHref="/chip-eight"
                 openInNewTab
                 dek="Interpret the ancient text and run CHIP-8 applications."
                 isNextLink={false}
@@ -67,6 +67,14 @@ export default function Projects() {
               >
                 <DiceRollDialog />
               </IntroContainer>
+              <Divider className={styles.projectDivider} />
+              <IntroContainer
+                header="Tic Tac Toe"
+                headerHref="/tic-tac-toe"
+                openInNewTab
+                dek="Find a friend and play a quick game."
+                isNextLink={false}
+              />
               <Divider className={styles.projectDivider} />
               <IntroContainer
                 header="hamologist.com"
