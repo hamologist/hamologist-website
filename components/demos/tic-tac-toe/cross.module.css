@@ -1,6 +1,6 @@
 .cross {
     background: white;
-    height: 66%;
+    height: 72%;
     position: relative;
     width: 10px;
     transform: rotate(45deg);
@@ -10,8 +10,8 @@
      background: white;
      content: '';
      height: 10px;
-     left: -38px;
+     left: -47px;
      position: absolute;
-     top: 40px;
-     width: 85px;
+     top: 46px;
+     width: 104px;
  }
