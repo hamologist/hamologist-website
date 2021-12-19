@@ -1,36 +1,39 @@
-import React, { Dispatch, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import styles from './square.module.css';
 import Circle from './circle';
 import Cross from './cross';
-import { GameStates, Players } from './app';
-
-export enum SquareStates {
-  Empty,
-  Circle,
-  Cross,
-}
+import {
+  Players, SessionStates, SquareStates, TicTacToeManager,
+} from './hooks/ticTacToe';
 
 export type SquareProps = React.PropsWithChildren<{
-  setState: Dispatch<React.SetStateAction<SquareStates>>,
-  state: SquareStates,
-  player: Players,
-  gameState: GameStates
+  currentPlayer: TicTacToeManager['currentPlayer'];
+  sessionState: TicTacToeManager['sessionState']
+  processPlayerMove: TicTacToeManager['processPlayerMove'];
+  initialSquareState: SquareStates;
+  x: number;
+  y: number;
 }>;
 
 export function Square(
   {
-    setState,
-    state,
-    player,
-    gameState,
+    currentPlayer,
+    sessionState,
+    processPlayerMove,
+    initialSquareState,
+    x,
+    y,
   }: SquareProps,
 ) {
+  const [currentSquare, setCurrentSquare] = useState<SquareStates>(initialSquareState);
+
   const handleClick = () => {
-    if (player === Players.PlayerOne) {
-      setState(SquareStates.Cross);
+    processPlayerMove({ x, y });
+    if (currentPlayer === Players.PlayerOne) {
+      setCurrentSquare(SquareStates.Cross);
     } else {
-      setState(SquareStates.Circle);
+      setCurrentSquare(SquareStates.Circle);
     }
   };
 
@@ -44,11 +47,11 @@ export function Square(
       onKeyDown={handleClick}
     />
   );
-  if (state === SquareStates.Cross) {
+  if (currentSquare === SquareStates.Cross) {
     gamePiece = Cross();
-  } else if (state === SquareStates.Circle) {
+  } else if (currentSquare === SquareStates.Circle) {
     gamePiece = Circle();
-  } else if (gameState !== GameStates.Playing) {
+  } else if (sessionState !== SessionStates.Playing) {
     gamePiece = <div style={{ width: '100%', height: '100%' }} />;
   }
 
@@ -57,16 +60,4 @@ export function Square(
       {gamePiece}
     </Grid>
   );
-}
-
-export default function createSquare(player: Players, gameState: GameStates): [
-  Dispatch<React.SetStateAction<SquareStates>>,
-  SquareStates,
-  JSX.Element,
-] {
-  const [state, setState] = useState<SquareStates>(SquareStates.Empty);
-
-  return [setState, state, Square({
-    setState, state, player, gameState,
-  })];
 }
