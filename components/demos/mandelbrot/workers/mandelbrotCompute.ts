@@ -17,8 +17,10 @@ self.addEventListener('message', async (e: MessageEvent<MandelbrotWorkOrder>) =>
   const redT = workOrder.firstColor.red > workOrder.secondColor.red ? 1 : -1;
   const greenT = workOrder.firstColor.green > workOrder.secondColor.green ? 1 : -1;
   const blueT = workOrder.firstColor.blue > workOrder.secondColor.blue ? 1 : -1;
-  const canvas = new OffscreenCanvas(workOrder.viewWidth, workOrder.viewHeight);
-  const context = canvas.getContext('2d');
+  const result: { red: number, green: number, blue: number }[][] = new Array(workOrder.viewHeight);
+  for (let i = 0; i < workOrder.viewHeight; i++) {
+    result[i] = new Array(workOrder.viewWidth);
+  }
 
   for (let pY = 1; pY <= workOrder.viewHeight; pY++) {
     const yCord = (yDist * (pY / workOrder.viewHeight)) + yMin;
@@ -44,10 +46,9 @@ self.addEventListener('message', async (e: MessageEvent<MandelbrotWorkOrder>) =>
         rgba.green = (greenT * greenDis * intensity) + workOrder.firstColor.green;
         rgba.blue = (blueT * blueDis * intensity) + workOrder.firstColor.blue;
       }
-      context.fillStyle = `rgb(${rgba.red},${rgba.green},${rgba.blue})`;
-      context.fillRect(pX - 1, pY - 1, 1, 1);
+      result[pY - 1][pX - 1] = rgba;
     }
   }
 
-  postMessage(canvas.transferToImageBitmap());
+  postMessage(result);
 });

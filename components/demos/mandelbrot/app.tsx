@@ -16,9 +16,16 @@ export default function Mandelbrot(
   useEffect(() => {
     const worker = new Worker(new URL('./workers/mandelbrotCompute.ts', import.meta.url));
 
-    worker.addEventListener('message', (event: MessageEvent<ImageBitmap>) => {
-      const ctx = canvasRef.current.getContext('bitmaprenderer');
-      ctx.transferFromImageBitmap(event.data);
+    worker.addEventListener('message', (event: MessageEvent<{ red: number, green: number, blue: number }[][]>) => {
+      const ctx = canvasRef.current.getContext('2d');
+
+      for (let y = 0; y < event.data.length; y++) {
+        for (let x = 0; x < event.data[y].length; x++) {
+          const rgba = event.data[y][x];
+          ctx.fillStyle = `rgb(${rgba.red},${rgba.green},${rgba.blue})`;
+          ctx.fillRect(x, y, 1, 1);
+        }
+      }
     });
     worker.postMessage({
       ...workOrder,
