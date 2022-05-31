@@ -17,10 +17,7 @@ self.addEventListener('message', async (e: MessageEvent<MandelbrotWorkOrder>) =>
   const redT = workOrder.firstColor.red > workOrder.secondColor.red ? 1 : -1;
   const greenT = workOrder.firstColor.green > workOrder.secondColor.green ? 1 : -1;
   const blueT = workOrder.firstColor.blue > workOrder.secondColor.blue ? 1 : -1;
-  const result: { red: number, green: number, blue: number }[][] = new Array(workOrder.viewHeight);
-  for (let i = 0; i < workOrder.viewHeight; i++) {
-    result[i] = new Array(workOrder.viewWidth);
-  }
+  const result = new Uint8ClampedArray(workOrder.viewHeight * workOrder.viewWidth * 4);
 
   for (let pY = 1; pY <= workOrder.viewHeight; pY++) {
     const yCord = (yDist * (pY / workOrder.viewHeight)) + yMin;
@@ -38,17 +35,24 @@ self.addEventListener('message', async (e: MessageEvent<MandelbrotWorkOrder>) =>
         iteration += 1;
       }
 
-      const rgba = { red: 0, green: 0, blue: 0 };
+      const index = (workOrder.viewWidth * (pY - 1) + (pX - 1)) * 4;
+      result[index + 3] = 255;
       if (iteration !== workOrder.maxIterations) {
         const intensity = iteration / workOrder.maxIterations;
-
-        rgba.red = (redT * redDis * intensity) + workOrder.firstColor.red;
-        rgba.green = (greenT * greenDis * intensity) + workOrder.firstColor.green;
-        rgba.blue = (blueT * blueDis * intensity) + workOrder.firstColor.blue;
+        result[index] = (redT * redDis * intensity) + workOrder.firstColor.red;
+        result[index + 1] = (greenT * greenDis * intensity) + workOrder.firstColor.green;
+        result[index + 2] = (blueT * blueDis * intensity) + workOrder.firstColor.blue;
+      } else {
+        result[index] = 0;
+        result[index + 1] = 0;
+        result[index + 2] = 0;
       }
-      result[pY - 1][pX - 1] = rgba;
     }
   }
 
-  postMessage(result);
+  postMessage({
+    width: workOrder.viewWidth,
+    height: workOrder.viewHeight,
+    result,
+  });
 });
